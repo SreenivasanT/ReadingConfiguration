@@ -1,0 +1,12 @@
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\ReadingConfiguration.exe
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\appsettings.Staging.json
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\ReadingConfiguration.dll
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\ReadingConfiguration.deps.json
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\ReadingConfiguration.runtimeconfig.json
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\ReadingConfiguration.pdb
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Personal\Learning\Core\ReadingConfiguration\ReadingConfiguration\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
