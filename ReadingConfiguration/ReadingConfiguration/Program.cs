@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 #region Start reading AppSettings.Json file
-//Reading Configuration file using JSon
+//Reading appsettings.json Configuration file using
 builder.Services.Configure<MySettingsConfiguration>(
     builder.Configuration.GetSection("MySettings"));
 builder.Services.AddConfig(builder.Configuration);
@@ -12,25 +12,26 @@ builder.Services.AddConfig(builder.Configuration);
 // Add services to the container.
 
 #region Code start for connecting the Azure App Configuration
-
+// Using to connect the azure App configuration
 var connectionString = builder.Configuration.GetConnectionString("AppConfig");
-builder.Host.ConfigureAppConfiguration(builder =>
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
-    builder.AddAzureAppConfiguration(option =>
+    var settings = config.Build();
+    config.AddAzureAppConfiguration(option =>
     {
         option.Connect(connectionString).ConfigureRefresh(refresh =>
         {
-            refresh.Register("Sentinel", true).SetCacheExpiration(new TimeSpan(0, 0, 20));
+            refresh.Register("AAConfiguration:Sentinel", refreshAll:true).SetCacheExpiration(new TimeSpan(0, 0, 30));
         });
     });
 })
 .ConfigureServices(service =>
-{
-    service.AddControllers();   
+{    service.AddControllers();   
 });
-
-// Add services to the container.This is commented as getting created when connecting the Azure App configuration in the above line
-// builder.Services.AddControllers();
+//Middleware for refreshing the azure App configuration
+builder.Services.Configure<AAConfiguration>(builder.Configuration.GetSection("AAConfiguration"));
+builder.Services.AddAzureAppConfiguration();
+builder.Services.AddControllers();
 #endregion
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -46,7 +47,8 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 // }
-
+//Middleware for refreshing the azure App configuration
+app.UseAzureAppConfiguration();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
